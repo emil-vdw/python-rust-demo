@@ -1,0 +1,11 @@
+[project]
+name = "madet"
+classifiers = ["Programming Language :: Python"]
+
+[tool.maturin]
+python-source = "python"
+module-name = "madet._madet"
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
