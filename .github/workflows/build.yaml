@@ -35,10 +35,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: "3.9"
       - name: Build wheels
-        env:
-          PYO3_PYTHON: python3.11
         uses: PyO3/maturin-action@v1
         with:
           target: ${{ matrix.platform.target }}
@@ -68,11 +66,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: "3.9"
       - name: Build wheels
         uses: PyO3/maturin-action@v1
-        env:
-          PYO3_PYTHON: python3.11
         with:
           target: ${{ matrix.platform.target }}
           args: --release --out dist --find-interpreter
@@ -97,12 +93,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: "3.9"
           architecture: ${{ matrix.platform.target }}
       - name: Build wheels
         uses: PyO3/maturin-action@v1
-        env:
-          PYO3_PYTHON: python3.11
         with:
           target: ${{ matrix.platform.target }}
           args: --release --out dist --find-interpreter
@@ -126,11 +120,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: "3.9"
       - name: Build wheels
         uses: PyO3/maturin-action@v1
-        env:
-          PYO3_PYTHON: python3.11
         with:
           target: ${{ matrix.platform.target }}
           args: --release --out dist --find-interpreter
@@ -145,6 +137,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
       - name: Build sdist
         uses: PyO3/maturin-action@v1
         with:
