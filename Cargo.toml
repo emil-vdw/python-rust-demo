@@ -1,14 +1,22 @@
 [package]
-name = "matmul"
+name = "python_rust_demo"
 version = "0.1.0"
 edition = "2021"
+
+[dependencies.uuid]
+version = "1.11.0"
+features = [
+    "v4",                # Lets you generate random UUIDs
+    "fast-rng",          # Use a faster (but still sufficiently random) RNG
+    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
+]
 
 [package.metadata.maturin]
 name = "madet._madet"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
-name = "madet"
+name = "python_rust_demo"
 
 [dependencies]
 pyo3 = { version = "0.23.0", features = ["extension-module"] }
